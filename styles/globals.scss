@@ -1,0 +1,225 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url('../public/media/bg.png');
+    background-size: cover;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+p, h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+$primary: #E4BD31;
+$primary-border: #FFDF6E;
+$primary-hover: #f0d164cc;
+
+$black-bg: #00000033;
+$black-bg-hover: #70707033;
+
+$silver-bg: #c4c4c466;
+$silver-bg-hover: #c4c4c433;
+
+button {
+    color: white;
+    background-color: $primary;
+    border: 1px solid $primary-border;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .25);
+
+    padding: 1rem 2rem;
+    width: fit-content;
+
+    cursor: pointer;
+
+    transition: border .2s linear, background-color .2s linear, transform .2s linear;
+
+    &:hover {
+        background-color: $primary-hover;
+        transform: scale(1.1);
+    }
+
+    &:active {
+        transition: none;
+        transform: scale(1);
+    }
+}
+
+.clickable {
+    cursor: pointer;
+
+    transition: border .2s linear, background-color .2s linear, transform .2s linear;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &:active {
+        transition: none;
+        transform: scale(1);
+    }
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 70vw;
+    margin: auto;
+
+    margin-top: 5vh;
+
+    p {
+        &:nth-of-type(1) {
+            font-size: 3.5rem;
+            margin-top: 1rem;
+        }
+
+        &:nth-of-type(2) {
+            font-size: 3rem;
+            margin-top: 10vh;
+        }
+
+        &:nth-of-type(3) {
+            font-size: 4rem;
+            margin-top: 20vh;
+        }
+
+        &:nth-of-type(4) {
+            font-size: 3.5rem;
+        }
+    }
+}
+
+.landing {
+    height: 100vh;
+    // background-image: url('../public/media/landing/klasicna.png');
+    background-size: cover;
+    // object-fit: cover;
+
+    .main {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        
+        width: 100vw;
+        padding: 0 2rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        i {
+            font-size: 5rem;
+            border-radius: 50%;
+            background-color: $silver-bg;
+            color: #000000cc;
+
+            &:hover {
+                background-color: $silver-bg-hover;
+                color: #000000;
+            }
+        }
+
+        .container {
+            width: 40vw;
+            padding: 2rem;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            background-color: $black-bg;
+            color: white;
+
+            p {
+                &:nth-of-type(1) {
+                    font-size: 3rem;
+                    text-align: center;
+                    margin-bottom: 1rem;
+                }
+
+                &:nth-of-type(2) {
+                    font-size: 2rem;
+                }
+            }
+
+            button {
+                margin-top: 4rem;
+                font-size: 1.5rem;
+                align-self: flex-end;
+            }
+        }
+    }
+
+    .dots {
+        position: absolute;
+        left: 50%;
+        bottom: 5%;
+        transform: translateX(-50%);
+
+        display: flex;
+
+        .dot {
+            margin: 0 .3rem;
+            width: 3rem;
+            height: 3rem;
+            border: 1px solid black;
+            border-radius: 50%;
+            
+            background-color: $silver-bg;
+
+            &.active {
+                background-color: $primary;
+                border-color: $primary-border;
+            }
+
+            &:hover {
+                background-color: $primary-hover;
+                border-color: $primary-border;
+            }
+        }
+    }
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    padding: .5rem 2rem;
+
+    background-color: $silver-bg;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left, .right {
+        display: flex;
+        align-items: center;
+
+        p {
+            margin: 0 1rem;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .left p {
+        font-size: 2.5rem;
+    }
+
+    .right p {
+        font-size: 1.5rem;
+    }
+}
