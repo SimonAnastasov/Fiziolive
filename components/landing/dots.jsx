@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux"
 import { setMassageCurrent } from "../../redux/actions"
 
-const dots = () => {
+const Dots = () => {
     const massages = useSelector(state => state.massages)
     
     const dispatch = useDispatch()
@@ -20,4 +20,4 @@ const dots = () => {
     )
 }
 
-export default dots
+export default Dots

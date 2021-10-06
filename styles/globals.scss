@@ -1,8 +1,18 @@
+$text: #565350;
+$text-60: #56535099;
+$link: #427EF3;
+$brown-body-fill: #F5E3D0;
+
 body {
     margin: 0;
     padding: 0;
     background: url('../public/media/bg.png');
     background-size: cover;
+
+    background-color: $brown-body-fill;
+    color: $text;
+
+    overflow-x: hidden;
 }
 
 body * {
@@ -13,6 +23,9 @@ p, h1, h2 {
     margin: 0;
     padding: 0;
 }
+
+$brown-fill: #FFE6CB;
+$brown-fill-60: #ffe6cb99;
 
 $primary: #E4BD31;
 $primary-border: #FFDF6E;
@@ -49,6 +62,10 @@ button {
     }
 }
 
+.shadow {
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .25);
+}
+
 .clickable {
     cursor: pointer;
 
@@ -61,6 +78,12 @@ button {
     &:active {
         transition: none;
         transform: scale(1);
+    }
+}
+
+.underline {
+    &:hover {
+        text-decoration: underline;
     }
 }
 
@@ -97,10 +120,17 @@ button {
 }
 
 .landing {
+    margin-bottom: 40vh;
+
     height: 100vh;
-    // background-image: url('../public/media/landing/klasicna.png');
     background-size: cover;
     // object-fit: cover;
+
+    transition: background-image .5s linear;
+
+    &:after {
+        display: none;
+    }
 
     .main {
         position: absolute;
@@ -186,6 +216,228 @@ button {
             }
         }
     }
+
+    .explore {
+        position: absolute;
+        bottom: 3vh;
+        right: 3vw;
+
+        display: flex;
+        align-items: center;
+
+        p {
+            width: 5rem;
+            white-space: wrap;
+            text-align: center;
+            color: black;
+        }
+
+        i {
+            font-size: 3rem;
+            border-radius: 50%;
+            background-color: $silver-bg;
+            color: #000000cc;
+
+            &:hover {
+                background-color: $silver-bg-hover;
+                color: #000000;
+            }
+        }
+    }
+}
+
+.titleAndHr {
+    width: 45vw;
+    margin: auto;
+
+    &>p {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+}
+
+.aboutUs {
+    margin-bottom: 20vh;
+
+    .container {
+        width: 45vw;
+        margin: auto;
+
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+
+        p {
+            flex: 2;
+            font-size: 1.5rem;
+            margin-left: 2rem;
+        }
+
+        img {
+            flex: 1;
+        }
+    }
+}
+
+.massages {
+    margin-bottom: 40vh;
+
+    .container {
+        width: 100vw;
+        margin-top: 2rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+
+        i {
+            font-size: 4rem;
+            border-radius: 50%;
+            background-color: $silver-bg;
+            color: #000000cc;
+
+            &:hover {
+                background-color: $silver-bg-hover;
+                color: #000000;
+            }
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            
+            .card {
+                background-color: $brown-fill-60;
+
+                width: 15vw;
+                margin: 0 1rem;
+                border: 1px solid black;
+
+                .img {
+                    background-size: cover;
+                    height: 8rem;
+                }
+
+                .content {
+                    padding: 0 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    p {
+                        text-align: center;
+
+                        &:nth-of-type(1) {
+                            font-size: 1.3rem;
+                            white-space: nowrap;
+                            margin-top: .5rem;
+                            margin-bottom: 1rem;
+                        }
+                        
+                        &:nth-of-type(2) {
+                            font-size: 1rem;
+                            margin-bottom: 2rem;
+                        }
+                    }
+
+                    button {
+                        font-size: .8rem;
+                        padding: .5rem 1rem;
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact {
+    margin-bottom: 40vh;
+
+    .container {
+        width: 80vw;
+        margin: auto;
+        margin-top: 2rem;
+        padding: 1rem;
+
+        background-color: $brown-fill-60;
+        border: 1px solid black;
+
+        &>p {
+            text-align: center;
+            margin-bottom: .5rem;
+        }
+
+        .ways {
+            width: 40vw;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            
+            p {
+                font-size: 1.5rem;
+                text-decoration: underline;
+
+                color: $text-60;
+
+                &.active {
+                    color: $text;
+                }
+            }
+        }
+
+        .triangles {
+            width: 40vw;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+
+            
+            img {
+                transition: opacity .2s linear;
+
+                opacity: 0;
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .chosen {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10vh;
+
+            &>div {
+                border: 1px solid black;
+                border-radius: 20px;
+
+                width: 40vw;
+                height: 40vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 2px;
+            }
+
+            .phone {
+                p {
+                    font-size: 5rem;
+                }
+            }
+
+            .email {
+                p {
+                    font-size: 4rem;
+                }
+            }
+        }
+    }
 }
 
 .header {
@@ -195,8 +447,10 @@ button {
     width: 100vw;
     padding: .5rem 2rem;
 
-    background-color: $silver-bg;
-    color: white;
+    // background-color: $silver-bg;
+    // color: white;
+
+    transition: background-color .2s linear, color .2s linear, box-shadow .2s linear;
 
     display: flex;
     justify-content: space-between;

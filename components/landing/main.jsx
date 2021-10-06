@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux"
 import { decrementMassageCurrent, incrementMassageCurrent } from "../../redux/actions"
 
-const main = () => {
+const Main = () => {
     const massages = useSelector(state => state.massages)
 
     const massage = massages.massages[massages.current]
@@ -16,11 +16,11 @@ const main = () => {
             <div className="container">
                 <p>{title}</p>
                 <p>{explanation}</p>
-                <button>Дознај Повеќе</button>
+                <button>Дознај Повеќе...</button>
             </div>
             <i onClick={() => dispatch(incrementMassageCurrent())} className="clickable far fa-arrow-alt-circle-right"></i>
         </div>
     )
 }
 
-export default main
+export default Main

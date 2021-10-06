@@ -3,6 +3,9 @@ body {
   padding: 0;
   background: url("../public/media/bg.png");
   background-size: cover;
+  background-color: #F5E3D0;
+  color: #565350;
+  overflow-x: hidden;
 }
 
 body * {
@@ -46,6 +49,11 @@ button:active {
           transform: scale(1);
 }
 
+.shadow {
+  -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
 .clickable {
   cursor: pointer;
   -webkit-transition: border .2s linear, background-color .2s linear, -webkit-transform .2s linear;
@@ -64,6 +72,10 @@ button:active {
   transition: none;
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+.underline:hover {
+  text-decoration: underline;
 }
 
 .welcome {
@@ -103,8 +115,15 @@ button:active {
 }
 
 .landing {
+  margin-bottom: 40vh;
   height: 100vh;
   background-size: cover;
+  -webkit-transition: background-image .5s linear;
+  transition: background-image .5s linear;
+}
+
+.landing:after {
+  display: none;
 }
 
 .landing .main {
@@ -203,14 +222,271 @@ button:active {
   border-color: #FFDF6E;
 }
 
+.landing .explore {
+  position: absolute;
+  bottom: 3vh;
+  right: 3vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.landing .explore p {
+  width: 5rem;
+  white-space: wrap;
+  text-align: center;
+  color: black;
+}
+
+.landing .explore i {
+  font-size: 3rem;
+  border-radius: 50%;
+  background-color: #c4c4c466;
+  color: #000000cc;
+}
+
+.landing .explore i:hover {
+  background-color: #c4c4c433;
+  color: #000000;
+}
+
+.titleAndHr {
+  width: 45vw;
+  margin: auto;
+}
+
+.titleAndHr > p {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.aboutUs {
+  margin-bottom: 20vh;
+}
+
+.aboutUs .container {
+  width: 45vw;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem;
+}
+
+.aboutUs .container p {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  font-size: 1.5rem;
+  margin-left: 2rem;
+}
+
+.aboutUs .container img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.massages {
+  margin-bottom: 40vh;
+}
+
+.massages .container {
+  width: 100vw;
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2rem;
+}
+
+.massages .container i {
+  font-size: 4rem;
+  border-radius: 50%;
+  background-color: #c4c4c466;
+  color: #000000cc;
+}
+
+.massages .container i:hover {
+  background-color: #c4c4c433;
+  color: #000000;
+}
+
+.massages .container .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.massages .container .cards .card {
+  background-color: #ffe6cb99;
+  width: 15vw;
+  margin: 0 1rem;
+  border: 1px solid black;
+}
+
+.massages .container .cards .card .img {
+  background-size: cover;
+  height: 8rem;
+}
+
+.massages .container .cards .card .content {
+  padding: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.massages .container .cards .card .content p {
+  text-align: center;
+}
+
+.massages .container .cards .card .content p:nth-of-type(1) {
+  font-size: 1.3rem;
+  white-space: nowrap;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+}
+
+.massages .container .cards .card .content p:nth-of-type(2) {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.massages .container .cards .card .content button {
+  font-size: .8rem;
+  padding: .5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact {
+  margin-bottom: 40vh;
+}
+
+.contact .container {
+  width: 80vw;
+  margin: auto;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #ffe6cb99;
+  border: 1px solid black;
+}
+
+.contact .container > p {
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+.contact .container .ways {
+  width: 40vw;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact .container .ways p {
+  font-size: 1.5rem;
+  text-decoration: underline;
+  color: #56535099;
+}
+
+.contact .container .ways p.active {
+  color: #565350;
+}
+
+.contact .container .triangles {
+  width: 40vw;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.contact .container .triangles img {
+  -webkit-transition: opacity .2s linear;
+  transition: opacity .2s linear;
+  opacity: 0;
+}
+
+.contact .container .triangles img.active {
+  opacity: 1;
+}
+
+.contact .container .chosen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 10vh;
+}
+
+.contact .container .chosen > div {
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 40vw;
+  height: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2px;
+}
+
+.contact .container .chosen .phone p {
+  font-size: 5rem;
+}
+
+.contact .container .chosen .email p {
+  font-size: 4rem;
+}
+
 .header {
   position: fixed;
   left: 0;
   top: 0;
   width: 100vw;
   padding: .5rem 2rem;
-  background-color: #c4c4c466;
-  color: white;
+  -webkit-transition: background-color .2s linear, color .2s linear, -webkit-box-shadow .2s linear;
+  transition: background-color .2s linear, color .2s linear, -webkit-box-shadow .2s linear;
+  transition: background-color .2s linear, color .2s linear, box-shadow .2s linear;
+  transition: background-color .2s linear, color .2s linear, box-shadow .2s linear, -webkit-box-shadow .2s linear;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
