@@ -195,26 +195,6 @@ button {
         transform: translateX(-50%);
 
         display: flex;
-
-        .dot {
-            margin: 0 .3rem;
-            width: 3rem;
-            height: 3rem;
-            border: 1px solid black;
-            border-radius: 50%;
-            
-            background-color: $silver-bg;
-
-            &.active {
-                background-color: $primary;
-                border-color: $primary-border;
-            }
-
-            &:hover {
-                background-color: $primary-hover;
-                border-color: $primary-border;
-            }
-        }
     }
 
     .explore {
@@ -475,5 +455,337 @@ button {
 
     .right p {
         font-size: 1.5rem;
+    }
+}
+
+.footer {
+    display: none;
+}
+
+.dots {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+        display: none;
+
+        font-size: 3rem;
+        margin: 0 .3rem;
+
+        border-radius: 50%;
+        background-color: $silver-bg;
+        color: #000000cc;
+
+        &:hover {
+            background-color: $silver-bg-hover;
+            color: #000000;
+        }
+    }
+
+    .dot {
+        margin: 0 .3rem;
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid black;
+        border-radius: 50%;
+        
+        background-color: $silver-bg;
+        
+        &.active {
+            background-color: $primary;
+            border-color: $primary-border;
+        }
+        
+        &:hover {
+            background-color: $primary-hover;
+            border-color: $primary-border;
+        }
+    }
+}
+
+// mobile
+
+@media (max-width: 1100px) {
+    .dots {
+        .dot {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
+    .landing {
+        .main {
+            justify-content: center;
+    
+            i {
+                display: none;
+            }
+    
+            .container {
+                width: 90vw;
+                padding: 2rem;
+    
+                p {
+                    &:nth-of-type(1) {
+                        font-size: 3rem;
+                        text-align: center;
+                        margin-bottom: 1rem;
+                    }
+    
+                    &:nth-of-type(2) {
+                        font-size: 2rem;
+                    }
+                }
+    
+                button {
+                    margin-top: 4rem;
+                    font-size: 1.5rem;
+                    align-self: flex-end;
+                }
+            }
+        }
+    
+        .dots {
+            bottom: 15%;
+            transform: translateX(-50%);
+            align-items: center;
+
+            i {
+                display: inline-block;
+            }
+        }
+    
+        .explore {
+            display: none;
+        }
+    }
+
+    .titleAndHr {
+        width: 90vw;
+    }
+
+    .aboutUs {
+        .container {
+            width: 90vw;
+    
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.2rem 2rem;
+    
+            p {
+                margin-left: 0;
+                margin-top: 1.5rem;
+                text-align: center;
+            }
+        }
+    }
+
+    .massages {
+        margin-bottom: 30vh;
+    
+        .container {
+            justify-content: center;
+    
+            .cards {
+                display: flex;
+                justify-content: center;
+                
+                .card {
+                    width: 30vw;
+    
+                    .img {
+                        height: 12rem;
+                    }
+    
+                    .content {
+                        p {
+                            &:nth-of-type(1) {
+                                margin-top: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .contact {
+        margin-bottom: 40vh;
+    
+        .container {
+            width: 80vw;
+    
+            .ways {
+                width: 100%;
+                
+                p {
+                    font-size: 1.5rem;
+                }
+            }
+    
+            .triangles {
+                width: 100%;
+            }
+    
+            .chosen {
+                margin-bottom: 5vh;
+    
+                &>div {
+                    width: 100%;
+                    height: 30vh;
+                }
+    
+                .phone {
+                    p {
+                        font-size: 3rem;
+                    }
+                }
+    
+                .email {
+                    p {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .header {
+        justify-content: center;
+
+        .right {
+            display: none;
+        }
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100vw;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: .5rem 1rem;
+
+        transition: background-color .2s linear, color .2s linear, box-shadow .2s linear;
+
+        &>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                font-size: 1.2rem;
+                text-decoration: underline;
+                margin-bottom: .2rem;
+            }
+
+            i {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .massages {
+        .container {
+            .cards {
+                .card {
+                    width: 60vw;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .landing {
+        .main {
+            .container {
+                p {
+                    &:nth-of-type(1) {
+                        font-size: 2.8rem;
+                    }
+    
+                    &:nth-of-type(2) {
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .dots {
+        i {
+            font-size: 2.8rem;
+        }
+
+        .dot {
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+    }
+
+    .landing {
+        .main {
+            .container {
+                p {
+                    &:nth-of-type(1) {
+                        font-size: 2.6rem;
+                    }
+    
+                    &:nth-of-type(2) {
+                        font-size: 1.6rem;
+                        text-align: center;
+                    }
+                }
+
+                button {
+                    align-self: center;
+                }
+            }
+        }
+    }
+    
+    .massages {
+        .container {
+            i {
+                display: none;
+            }
+
+            .cards {
+                .card {
+                    width: 80vw;
+                }
+            }
+        }
+
+        .dots {
+            i {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 350px) {
+    html {
+        font-size: 12px;
     }
 }

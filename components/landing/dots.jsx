@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux"
-import { setMassageCurrent } from "../../redux/actions"
+import { decrementMassageCurrent, incrementMassageCurrent, setMassageCurrent } from "../../redux/actions"
 
 const Dots = () => {
     const massages = useSelector(state => state.massages)
@@ -15,7 +15,9 @@ const Dots = () => {
 
     return (
         <div className="dots">
+            <i onClick={() => dispatch(decrementMassageCurrent())} className="clickable far fa-arrow-alt-circle-left"></i>
             {dots}
+            <i onClick={() => dispatch(incrementMassageCurrent())} className="clickable far fa-arrow-alt-circle-right"></i>
         </div>
     )
 }

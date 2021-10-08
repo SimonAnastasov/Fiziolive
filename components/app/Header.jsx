@@ -25,16 +25,31 @@ const Header = () => {
         };
     }, []);
 
+    function setScroll(elm) {
+        const bodyRect = document.body.getBoundingClientRect()
+
+        const element = document.getElementsByClassName(elm)[0]
+        const rect = element.getBoundingClientRect()
+
+        const vh = window.innerHeight * 0.01
+        const scroll = rect.top - bodyRect.top - 15*vh
+
+        window.scroll({
+            top: scroll,
+            behavior: 'smooth'
+        })
+    }
+
     return (
         <div className={`header ${shadowClass}`} style={{backgroundColor: bgColor, color: color}}>
             <div className="left">
-                <Image className="clickable" width="60" height="60" src="/media/logo.png"/>
-                <p className="clickable underline">Fiziolive</p>
+                <Image onClick={() => setScroll('landing')} className="clickable" width="60" height="60" src="/media/logo.png"/>
+                <p onClick={() => setScroll('landing')} className="clickable underline">Fiziolive</p>
             </div>
             <div className="right">
-                <p className="clickable underline">Масажи</p>
-                <p className="clickable underline">За Нас</p>
-                <p className="clickable underline">Контакт</p>
+                <p onClick={() => setScroll('aboutUs')} className="clickable underline">За Нас</p>
+                <p onClick={() => setScroll('massages')} className="clickable underline">Масажи</p>
+                <p onClick={() => setScroll('contact')} className="clickable underline">Контакт</p>
                 <p className="clickable underline">Закажи</p>
             </div>
         </div>

@@ -1,10 +1,11 @@
-import { CHANGE_CONTACT_WAY, DECREMENT_CARDS_CURRENT, DECREMENT_MASSAGE_CURRENT, INCREMENT_CARDS_CURRENT, INCREMENT_MASSAGE_CURRENT, SET_MASSAGE_CURRENT, SET_SCROLLED } from "../actions"
+import { CHANGE_CARDS_LIMIT, CHANGE_CONTACT_WAY, DECREMENT_CARDS_CURRENT, DECREMENT_MASSAGE_CURRENT, INCREMENT_CARDS_CURRENT, INCREMENT_MASSAGE_CURRENT, SET_CARDS_CURRENT, SET_MASSAGE_CURRENT, SET_SCROLLED } from "../actions"
 
 const massages = {
     scrolled: false,
     contact: 'phone',
     current: 0,
     cardsCurrent: 0,
+    cardsLimit: 4,
     massages: [
         {
             title: 'Класична Масажа',
@@ -64,6 +65,8 @@ const massagesReducer = (state = massages, action) => {
             return {...state, scrolled: action.payload}
         case CHANGE_CONTACT_WAY:
             return {...state, contact: action.payload}
+        case CHANGE_CARDS_LIMIT:
+            return {...state, cardsLimit: action.payload}
         case INCREMENT_MASSAGE_CURRENT:
             return {...state, current: (state.current+1 >= state.massages.length) ? 0 : state.current+1}
         case DECREMENT_MASSAGE_CURRENT:
@@ -74,6 +77,8 @@ const massagesReducer = (state = massages, action) => {
             return {...state, cardsCurrent: (state.cardsCurrent+1 >= state.massages.length) ? 0 : state.cardsCurrent+1}
         case DECREMENT_CARDS_CURRENT:
             return {...state, cardsCurrent: (state.cardsCurrent-1 < 0) ? state.massages.length-1 : state.cardsCurrent-1}
+        case SET_CARDS_CURRENT:
+            return {...state, cardsCurrent: action.payload}
         default:
             return state
     }

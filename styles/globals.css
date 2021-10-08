@@ -203,25 +203,6 @@ button:active {
   display: flex;
 }
 
-.landing .dots .dot {
-  margin: 0 .3rem;
-  width: 3rem;
-  height: 3rem;
-  border: 1px solid black;
-  border-radius: 50%;
-  background-color: #c4c4c466;
-}
-
-.landing .dots .dot.active {
-  background-color: #E4BD31;
-  border-color: #FFDF6E;
-}
-
-.landing .dots .dot:hover {
-  background-color: #f0d164cc;
-  border-color: #FFDF6E;
-}
-
 .landing .explore {
   position: absolute;
   bottom: 3vh;
@@ -521,5 +502,288 @@ button:active {
 
 .header .right p {
   font-size: 1.5rem;
+}
+
+.footer {
+  display: none;
+}
+
+.dots {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dots i {
+  display: none;
+  font-size: 3rem;
+  margin: 0 .3rem;
+  border-radius: 50%;
+  background-color: #c4c4c466;
+  color: #000000cc;
+}
+
+.dots i:hover {
+  background-color: #c4c4c433;
+  color: #000000;
+}
+
+.dots .dot {
+  margin: 0 .3rem;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: #c4c4c466;
+}
+
+.dots .dot.active {
+  background-color: #E4BD31;
+  border-color: #FFDF6E;
+}
+
+.dots .dot:hover {
+  background-color: #f0d164cc;
+  border-color: #FFDF6E;
+}
+
+@media (max-width: 1100px) {
+  .dots .dot {
+    width: 2rem;
+    height: 2rem;
+  }
+  .landing .main {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .landing .main i {
+    display: none;
+  }
+  .landing .main .container {
+    width: 90vw;
+    padding: 2rem;
+  }
+  .landing .main .container p:nth-of-type(1) {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .landing .main .container p:nth-of-type(2) {
+    font-size: 2rem;
+  }
+  .landing .main .container button {
+    margin-top: 4rem;
+    font-size: 1.5rem;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  .landing .dots {
+    bottom: 15%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .landing .dots i {
+    display: inline-block;
+  }
+  .landing .explore {
+    display: none;
+  }
+  .titleAndHr {
+    width: 90vw;
+  }
+  .aboutUs .container {
+    width: 90vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 1.2rem 2rem;
+  }
+  .aboutUs .container p {
+    margin-left: 0;
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  .massages {
+    margin-bottom: 30vh;
+  }
+  .massages .container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .massages .container .cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .massages .container .cards .card {
+    width: 30vw;
+  }
+  .massages .container .cards .card .img {
+    height: 12rem;
+  }
+  .massages .container .cards .card .content p:nth-of-type(1) {
+    margin-top: 1rem;
+  }
+  .contact {
+    margin-bottom: 40vh;
+  }
+  .contact .container {
+    width: 80vw;
+  }
+  .contact .container .ways {
+    width: 100%;
+  }
+  .contact .container .ways p {
+    font-size: 1.5rem;
+  }
+  .contact .container .triangles {
+    width: 100%;
+  }
+  .contact .container .chosen {
+    margin-bottom: 5vh;
+  }
+  .contact .container .chosen > div {
+    width: 100%;
+    height: 30vh;
+  }
+  .contact .container .chosen .phone p {
+    font-size: 3rem;
+  }
+  .contact .container .chosen .email p {
+    font-size: 2rem;
+  }
+  .header {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header .right {
+    display: none;
+  }
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: .5rem 1rem;
+    -webkit-transition: background-color .2s linear, color .2s linear, -webkit-box-shadow .2s linear;
+    transition: background-color .2s linear, color .2s linear, -webkit-box-shadow .2s linear;
+    transition: background-color .2s linear, color .2s linear, box-shadow .2s linear;
+    transition: background-color .2s linear, color .2s linear, box-shadow .2s linear, -webkit-box-shadow .2s linear;
+  }
+  .footer > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer > div p {
+    font-size: 1.2rem;
+    text-decoration: underline;
+    margin-bottom: .2rem;
+  }
+  .footer > div i {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .massages .container .cards .card {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .landing .main .container p:nth-of-type(1) {
+    font-size: 2.8rem;
+  }
+  .landing .main .container p:nth-of-type(2) {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .dots i {
+    font-size: 2.8rem;
+  }
+  .dots .dot {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  .landing .main .container p:nth-of-type(1) {
+    font-size: 2.6rem;
+  }
+  .landing .main .container p:nth-of-type(2) {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  .landing .main .container button {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .massages .container i {
+    display: none;
+  }
+  .massages .container .cards .card {
+    width: 80vw;
+  }
+  .massages .dots i {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 350px) {
+  html {
+    font-size: 12px;
+  }
 }
 /*# sourceMappingURL=globals.css.map */

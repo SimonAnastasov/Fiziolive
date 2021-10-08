@@ -5,8 +5,11 @@ export const SET_MASSAGE_CURRENT = 'SET_MASSAGE_CURRENT'
 
 export const INCREMENT_CARDS_CURRENT = 'INCREMENT_CARDS_CURRENT'
 export const DECREMENT_CARDS_CURRENT = 'DECREMENT_CARDS_CURRENT'
+export const SET_CARDS_CURRENT = 'SET_CARDS_CURRENT'
 
 export const CHANGE_CONTACT_WAY = 'CHANGE_CONTACT_WAY'
+
+export const CHANGE_CARDS_LIMIT = 'CHANGE_CARDS_LIMIT'
 
 export const setScrolled = (scrolled) => {
     return {
@@ -46,9 +49,23 @@ export const decrementCardsCurrent = () => {
     }
 }
 
+export const setCardsCurrent = (i) => {
+    return {
+        type: SET_CARDS_CURRENT,
+        payload: i
+    }
+}
+
 export const changeContactWay = (way) => {
     return {
         type: CHANGE_CONTACT_WAY,
         payload: way
+    }
+}
+
+export const changeCardsLimit = (limit) => {
+    return {
+        type: CHANGE_CARDS_LIMIT,
+        payload: limit
     }
 }
