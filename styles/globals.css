@@ -140,8 +140,9 @@ button:active {
   height: 100vh;
   background-size: cover;
   opacity: 0;
-  -webkit-transition: background-image .5s linear, opacity .8s ease-in-out;
-  transition: background-image .5s linear, opacity .8s ease-in-out;
+  -webkit-transition: opacity .8s ease-in-out;
+  transition: opacity .8s ease-in-out;
+  position: relative;
 }
 
 .landing:after {
@@ -149,6 +150,8 @@ button:active {
 }
 
 .landing .img {
+  -webkit-transition: opacity .2s linear;
+  transition: opacity .2s linear;
   opacity: 0;
 }
 
@@ -488,6 +491,151 @@ button:active {
   font-size: 4rem;
 }
 
+.showMore {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ffe6cbcc;
+}
+
+.showMore .showMoreContainer {
+  width: 80vw;
+  background-color: #FFE6CB;
+  padding: 1rem 2rem;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.showMore .showMoreContainer i {
+  font-size: 2rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.showMore .showMoreContainer > p {
+  font-size: 2.25rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-bottom: 1rem;
+}
+
+.showMore .showMoreContainer .mainContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 1rem;
+}
+
+.showMore .showMoreContainer .mainContainer > div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  aspect-ratio: 16/9;
+}
+
+.showMore .showMoreContainer .mainContainer .left {
+  margin-right: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.showMore .showMoreContainer .mainContainer .left .up > p {
+  font-size: 1.25rem;
+}
+
+.showMore .showMoreContainer .mainContainer .left .down {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.showMore .showMoreContainer .mainContainer .left .down > p {
+  font-size: 2rem;
+}
+
+.showMore .showMoreContainer .mainContainer .left .down button {
+  font-size: 1.5rem;
+}
+
+.showMore .showMoreContainer .mainContainer .right {
+  margin-left: 1rem;
+  background-size: cover;
+  border: 1px solid black;
+}
+
+.showMore .showMoreContainer .dots {
+  margin-bottom: .5rem;
+}
+
+.showMore .showMoreContainer .dots i {
+  display: inline-block;
+  font-size: 2.5rem;
+}
+
+.showMore .showMoreContainer .dots > div {
+  width: 2rem;
+  height: 2rem;
+}
+
+.showMore .showMoreContainer .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.showMore .showMoreContainer .options p {
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+.showMore .showMoreContainer .options p:first-of-type {
+  color: #427EF3;
+  margin-right: 2rem;
+}
+
 .header {
   position: fixed;
   left: 0;
@@ -585,6 +733,74 @@ button:active {
 }
 
 @media (max-width: 1100px) {
+  .showMore .showMoreContainer {
+    width: 90vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .showMore .showMoreContainer > p {
+    font-size: 2.25rem;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin-bottom: 1rem;
+  }
+  .showMore .showMoreContainer .mainContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .showMore .showMoreContainer .mainContainer > div {
+    width: 50vw;
+  }
+  .showMore .showMoreContainer .mainContainer .left {
+    width: auto;
+    margin-right: 0;
+    margin-top: 1rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .showMore .showMoreContainer .mainContainer .left .up {
+    margin-bottom: 1rem;
+  }
+  .showMore .showMoreContainer .mainContainer .left .up > p {
+    font-size: 1.25rem;
+  }
+  .showMore .showMoreContainer .mainContainer .left .down {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .showMore .showMoreContainer .mainContainer .left .down > p {
+    font-size: 1.8rem;
+    margin-bottom: .5rem;
+  }
+  .showMore .showMoreContainer .mainContainer .left .down button {
+    font-size: 1.2rem;
+  }
+  .showMore .showMoreContainer .mainContainer .right {
+    margin-left: 0;
+    background-size: cover;
+    border: 1px solid black;
+  }
   .dots .dot {
     width: 2rem;
     height: 2rem;
@@ -722,9 +938,8 @@ button:active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -760,12 +975,75 @@ button:active {
 }
 
 @media (max-width: 700px) {
+  .welcome .container p:nth-of-type(1) {
+    font-size: 3.5rem;
+  }
+  .welcome .container p:nth-of-type(2) {
+    font-size: 2rem;
+  }
+  .welcome .container p:nth-of-type(3) {
+    font-size: 3rem;
+  }
+  .welcome .container p:nth-of-type(4) {
+    font-size: 2.5rem;
+  }
   .massages .container .cards .card {
     width: 60vw;
   }
 }
 
 @media (max-width: 500px) {
+  .showMore .showMoreContainer i {
+    font-size: 1.5rem;
+  }
+  .showMore .showMoreContainer > p {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+  }
+  .showMore .showMoreContainer .mainContainer .left .up {
+    margin-bottom: 1rem;
+  }
+  .showMore .showMoreContainer .mainContainer .left .up > p {
+    font-size: 1rem;
+  }
+  .showMore .showMoreContainer .mainContainer .left .down > p {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+  }
+  .showMore .showMoreContainer .mainContainer .left .down button {
+    font-size: 1rem;
+  }
+  .showMore .showMoreContainer .mainContainer .right {
+    margin-left: 0;
+    background-size: cover;
+    border: 1px solid black;
+  }
+  .showMore .showMoreContainer .dots {
+    margin-bottom: .5rem;
+  }
+  .showMore .showMoreContainer .dots i {
+    display: inline-block;
+    font-size: 2rem;
+  }
+  .showMore .showMoreContainer .dots > div {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .showMore .showMoreContainer .options p {
+    font-size: 1rem;
+  }
+  .welcome .container p:nth-of-type(1) {
+    font-size: 2.5rem;
+  }
+  .welcome .container p:nth-of-type(2) {
+    font-size: 1.5rem;
+  }
+  .welcome .container p:nth-of-type(3) {
+    font-size: 2.5rem;
+  }
+  .welcome .container p:nth-of-type(4) {
+    font-size: 2rem;
+  }
   .landing .main .container p:nth-of-type(1) {
     font-size: 2.8rem;
   }
@@ -809,9 +1087,18 @@ button:active {
   html {
     font-size: 14px;
   }
+  .landing .main .container p:nth-of-type(1) {
+    font-size: 2.4rem;
+  }
+  .landing .main .container p:nth-of-type(2) {
+    font-size: 1.4rem;
+  }
 }
 
 @media (max-width: 350px) {
+  .showMore .showMoreContainer .mainContainer .left .up > p {
+    font-size: 1rem;
+  }
   html {
     font-size: 12px;
   }

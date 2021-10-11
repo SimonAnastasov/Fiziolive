@@ -11,6 +11,37 @@ export const CHANGE_CONTACT_WAY = 'CHANGE_CONTACT_WAY'
 
 export const CHANGE_CARDS_LIMIT = 'CHANGE_CARDS_LIMIT'
 
+export const TOGGLE_SHOW_MORE = 'TOGGLE_SHOW_MORE'
+export const SET_SHOW_MORE_CURRENT = 'SET_SHOW_MORE_CURRENT'
+export const INCREMENT_SHOW_MORE_CURRENT = 'INCREMENT_SHOW_MORE_CURRENT'
+export const DECREMENT_SHOW_MORE_CURRENT = 'DECREMENT_SHOW_MORE_CURRENT'
+
+export const setShowMoreCurrent = (i) => {
+    return {
+        type: SET_SHOW_MORE_CURRENT,
+        payload: i
+    }
+}
+
+export const incrementShowMoreCurrent = () => {
+    return {
+        type: INCREMENT_SHOW_MORE_CURRENT,
+    }
+}
+
+export const decrementShowMoreCurrent = () => {
+    return {
+        type: DECREMENT_SHOW_MORE_CURRENT,
+    }
+}
+
+export const toggleShowMore = (val) => {
+    return {
+        type: TOGGLE_SHOW_MORE,
+        payload: val
+    }
+}
+
 export const setScrolled = (scrolled) => {
     return {
         type: SET_SCROLLED,

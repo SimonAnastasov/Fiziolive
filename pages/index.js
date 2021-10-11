@@ -7,10 +7,16 @@ import AboutUs from '../components/app/AboutUs'
 import Massages from '../components/app/Massages'
 import Contact from '../components/app/Contact'
 
+import ShowMore from '../components/app/ShowMore'
+
 import Header from '../components/app/Header'
 import Footer from '../components/app/Footer'
 
-export default function Home({ isConnected }) {
+import { useSelector } from 'react-redux'
+
+export default function Home({}) {
+  const massages = useSelector(state => state.massages)
+
   return (
     <div className="app">
       <Head>
@@ -22,6 +28,8 @@ export default function Home({ isConnected }) {
       <AboutUs/>
       <Massages/>
       <Contact/>
+
+      {massages.showMore ? <ShowMore/> : <></>}
 
       <Header/>
       <Footer/>

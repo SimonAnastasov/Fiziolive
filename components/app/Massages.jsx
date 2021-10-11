@@ -46,7 +46,7 @@ const Massages = () => {
     }
 
     const dots = massages.massages.map((m, i) => {
-        const active = arrAdded.indexOf(i) !== -1 ? 'active' : ''
+        const active = i === massages.cardsCurrent ? 'active' : ''
         return (
             <div onClick={() => dispatch(setCardsCurrent(i))} key={`key${i}`} className={`dot clickable ${active}`}></div>
         )

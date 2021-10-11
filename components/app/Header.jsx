@@ -14,8 +14,19 @@ const Header = () => {
     
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY === 0) dispatch(setScrolled(false))
-            else if (window.scrollY > 0) dispatch(setScrolled(true))
+            if (window.scrollY === 0) {
+                dispatch(setScrolled(false))
+
+                document.getElementsByClassName('landing')[0].style.transition = 'none'
+                document.getElementsByClassName('landing')[0].style.opacity = '1'
+            }
+            else if (window.scrollY > 0) {
+                dispatch(setScrolled(true))
+
+                const landingOpacity = 1 - (window.scrollY / window.innerHeight)
+                document.getElementsByClassName('landing')[0].style.transition = 'none'
+                document.getElementsByClassName('landing')[0].style.opacity = landingOpacity
+            }
         };
     
         window.addEventListener("scroll", handleScroll)
@@ -50,7 +61,6 @@ const Header = () => {
                 <p onClick={() => setScroll('aboutUs')} className="clickable underline">За Нас</p>
                 <p onClick={() => setScroll('massages')} className="clickable underline">Масажи</p>
                 <p onClick={() => setScroll('contact')} className="clickable underline">Контакт</p>
-                <p className="clickable underline">Закажи</p>
             </div>
         </div>
     )

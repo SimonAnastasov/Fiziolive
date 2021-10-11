@@ -18,7 +18,7 @@ const Welcome = () => {
                 document.querySelector('body').style.overflowY = 'scroll'
                 clearInterval(int)
             }
-        }, 2000)
+        }, 200)
     }, [])
 
     return (

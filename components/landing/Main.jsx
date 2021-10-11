@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux"
-import { decrementMassageCurrent, incrementMassageCurrent } from "../../redux/actions"
+import { decrementMassageCurrent, incrementMassageCurrent, setShowMoreCurrent, toggleShowMore } from "../../redux/actions"
 
 const Main = () => {
     const massages = useSelector(state => state.massages)
@@ -10,13 +10,18 @@ const Main = () => {
 
     const dispatch = useDispatch()
 
+    function showMore(i) {
+        dispatch(toggleShowMore(true))
+        dispatch(setShowMoreCurrent(i))
+    }
+
     return (
         <div className="main">
             <i onClick={() => dispatch(decrementMassageCurrent())} className="clickable far fa-arrow-alt-circle-left"></i>
             <div className="container">
                 <p>{title}</p>
                 <p>{explanation}</p>
-                <button>Дознај Повеќе...</button>
+                <button onClick={() => showMore(massages.current)}>Дознај Повеќе...</button>
             </div>
             <i onClick={() => dispatch(incrementMassageCurrent())} className="clickable far fa-arrow-alt-circle-right"></i>
         </div>

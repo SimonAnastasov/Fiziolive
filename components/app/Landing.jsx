@@ -47,6 +47,7 @@ const Landing = () => {
                 objectPosition="center"
                 priority="true"
                 className={i === massages.current ? 'img active' : 'img'}
+                key={`imgKey${i}`}
             />
         )
     })

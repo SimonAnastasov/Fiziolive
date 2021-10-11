@@ -27,6 +27,7 @@ p, h1, h2 {
 
 $brown-fill: #FFE6CB;
 $brown-fill-60: #ffe6cb99;
+$brown-fill-80: #ffe6cbcc;
 
 $primary: #E4BD31;
 $primary-border: #FFDF6E;
@@ -146,13 +147,17 @@ button {
     background-size: cover;
 
     opacity: 0;
-    transition: background-image .5s linear, opacity .8s ease-in-out;
+    transition: opacity .8s ease-in-out;
+
+    position: relative;
 
     &:after {
         display: none;
     }
 
     .img {
+        transition: opacity .2s linear;
+
         opacity: 0;
 
         &.active {
@@ -448,6 +453,127 @@ button {
     }
 }
 
+.showMore {
+    z-index: 1;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $brown-fill-80;
+
+    .showMoreContainer {
+        width: 80vw;
+        // height: 80vh;
+        background-color: $brown-fill;
+
+        padding: 1rem 2rem;
+        
+        border: 1px solid black;
+
+        display: flex;
+        flex-direction: column;
+
+        i {
+            font-size: 2rem;
+            align-self: flex-end;
+        }
+
+        &>p {
+            font-size: 2.25rem;
+            align-self: center;
+            margin-bottom: 1rem;
+        }
+
+        .mainContainer {
+            display: flex;
+            flex-direction: row;
+
+            margin-bottom: 1rem;
+
+            &>div {
+                flex: 1;
+
+                aspect-ratio: 16/9;
+            }
+
+            .left {
+                margin-right: 1rem;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .up {
+                    &>p {
+                        font-size: 1.25rem;
+                    }
+                }
+
+                .down {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    &>p {
+                        font-size: 2rem;
+                    }
+
+                    button {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+
+            .right {
+                margin-left: 1rem;
+
+                background-size: cover;
+
+                border: 1px solid black;
+                // border-radius: 20px;
+            }
+        }
+
+        .dots {
+            margin-bottom: .5rem;
+
+            i {
+                display: inline-block;
+
+                font-size: 2.5rem;
+            }
+
+            &>div {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+
+        .options {
+            display: flex;
+            align-self: flex-end;
+
+            p {
+                font-size: 1.2rem;
+                text-decoration: underline;
+
+                &:first-of-type {
+                    color: $link;
+                    margin-right: 2rem;
+                }
+            }
+        }
+    }
+}
+
 .header {
     position: fixed;
     left: 0;
@@ -536,6 +662,70 @@ button {
 // mobile
 
 @media (max-width: 1100px) {
+    .showMore {
+        .showMoreContainer {
+            width: 90vw;
+    
+            display: flex;
+            flex-direction: column;
+    
+            &>p {
+                font-size: 2.25rem;
+                align-self: center;
+                margin-bottom: 1rem;
+            }
+    
+            .mainContainer {
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+    
+                &>div {
+                    width: 50vw;
+                }
+    
+                .left {
+                    width: auto;
+                    margin-right: 0;
+                    margin-top: 1rem;
+
+                    justify-content: center;
+    
+                    .up {
+                        margin-bottom: 1rem;
+
+                        &>p {
+                            font-size: 1.25rem;
+                        }
+                    }
+    
+                    .down {
+                        flex-direction: column;
+
+                        &>p {
+                            font-size: 1.8rem;
+                            margin-bottom: .5rem;
+                        }
+    
+                        button {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+    
+                .right {
+                    margin-left: 0;
+    
+                    background-size: cover;
+    
+                    border: 1px solid black;
+                }
+            }
+        }
+    }
+
     .dots {
         .dot {
             width: 2rem;
@@ -696,7 +886,7 @@ button {
         width: 100vw;
 
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
 
         padding: .5rem 1rem;
@@ -723,6 +913,28 @@ button {
 }
 
 @media (max-width: 700px) {
+    .welcome {
+        .container {
+            p {
+                &:nth-of-type(1) {
+                    font-size: 3.5rem;
+                }
+                
+                &:nth-of-type(2) {
+                    font-size: 2rem;
+                }
+                
+                &:nth-of-type(3) {
+                    font-size: 3rem;
+                }
+                
+                &:nth-of-type(4) {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+
     .massages {
         .container {
             .cards {
@@ -735,6 +947,95 @@ button {
 }
 
 @media (max-width: 500px) {
+    .showMore {
+        .showMoreContainer {
+            i {
+                font-size: 1.5rem;
+            }
+
+            &>p {
+                font-size: 2rem;
+                margin-bottom: .5rem;
+            }
+    
+            .mainContainer {
+                .left {
+                    .up {
+                        margin-bottom: 1rem;
+
+                        &>p {
+                            font-size: 1rem;
+                        }
+                    }
+    
+                    .down {
+                        &>p {
+                            font-size: 1.5rem;
+                            margin-bottom: .5rem;
+                        }
+    
+                        button {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+    
+                .right {
+                    margin-left: 0;
+    
+                    background-size: cover;
+    
+                    border: 1px solid black;
+                }
+            }
+    
+            .dots {
+                margin-bottom: .5rem;
+    
+                i {
+                    display: inline-block;
+    
+                    font-size: 2rem;
+                }
+    
+                &>div {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
+            }
+    
+            .options {
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    .welcome {
+        .container {
+            p {
+                &:nth-of-type(1) {
+                    font-size: 2.5rem;
+                }
+                
+                &:nth-of-type(2) {
+                    font-size: 1.5rem;
+                    // margin-top: 15vh;
+                }
+                
+                &:nth-of-type(3) {
+                    font-size: 2.5rem;
+                    // margin-top: 25vh;
+                }
+                
+                &:nth-of-type(4) {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
     .landing {
         .main {
             .container {
@@ -810,9 +1111,39 @@ button {
     html {
         font-size: 14px;
     }
+
+    .landing {
+        .main {
+            .container {
+                p {
+                    &:nth-of-type(1) {
+                        font-size: 2.4rem;
+                    }
+    
+                    &:nth-of-type(2) {
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 350px) {
+    .showMore {
+        .showMoreContainer {
+            .mainContainer {
+                .left {
+                    .up {
+                        &>p {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     html {
         font-size: 12px;
     }

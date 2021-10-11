@@ -56,11 +56,7 @@ const Footer = () => {
             <div className="clickable" onClick={() => setScroll('contact')}>
                 <p>Контакт</p>
                 <i className="fas fa-phone-square"></i>
-            </div>
-            <div className="clickable">
-                <p>Закажи</p>
-                <i className="fas fa-calendar-check"></i>
-            </div>     
+            </div>   
         </div>
     )
 }
