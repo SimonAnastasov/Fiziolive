@@ -38,7 +38,7 @@ const Landing = () => {
 
     // style={{backgroundImage: `url(${bg})`}}
 
-    const allImages = massages.massages.map(m => {
+    const allImages = massages.massages.map((m, i) => {
         return (
             <Image
                 src={m.img}
@@ -46,6 +46,7 @@ const Landing = () => {
                 objectFit="cover"
                 objectPosition="center"
                 priority="true"
+                className={i === massages.current ? 'img active' : 'img'}
             />
         )
     })
@@ -53,13 +54,6 @@ const Landing = () => {
     return (
         <div className="landing">
             {allImages}
-            <Image
-                src={bg}
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
-                priority="true"
-            />
             <Main/>
             <Dots/>
             <div className="explore">
