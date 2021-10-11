@@ -38,13 +38,27 @@ const Landing = () => {
 
     // style={{backgroundImage: `url(${bg})`}}
 
+    const allImages = massages.massages.map(m => {
+        return (
+            <Image
+                src={m.img}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+                priority="true"
+            />
+        )
+    })
+
     return (
         <div className="landing">
+            {allImages}
             <Image
                 src={bg}
                 layout="fill"
                 objectFit="cover"
                 objectPosition="center"
+                priority="true"
             />
             <Main/>
             <Dots/>
