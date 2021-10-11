@@ -1,6 +1,8 @@
 import Main from '../landing/Main'
 import Dots from '../landing/Dots'
 
+import Image from 'next/image'
+
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux"
 import { incrementMassageCurrent } from '../../redux/actions'
@@ -34,8 +36,16 @@ const Landing = () => {
         })
     }
 
+    // style={{backgroundImage: `url(${bg})`}}
+
     return (
-        <div className="landing" style={{backgroundImage: `url(${bg})`}}>
+        <div className="landing">
+            <Image
+                src={bg}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+            />
             <Main/>
             <Dots/>
             <div className="explore">
