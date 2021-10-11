@@ -1069,13 +1069,14 @@ button:active {
     padding: 1rem;
   }
   .landing .main .container p:nth-of-type(1) {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
   }
   .landing .main .container p:nth-of-type(2) {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     text-align: center;
   }
   .landing .main .container button {
+    margin-top: 3rem;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -1099,10 +1100,10 @@ button:active {
     font-size: 14px;
   }
   .landing .main .container p:nth-of-type(1) {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
   .landing .main .container p:nth-of-type(2) {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
 
