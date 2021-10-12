@@ -1,5 +1,6 @@
 export const SET_SCROLLED = 'SET_SCROLLED'
 export const INCREMENT_MASSAGE_CURRENT = 'INCREMENT_MASSAGE_CURRENT'
+export const INCREMENT_MASSAGE_CURRENT_AUTO = 'INCREMENT_MASSAGE_CURRENT_AUTO'
 export const DECREMENT_MASSAGE_CURRENT = 'DECREMENT_MASSAGE_CURRENT'
 export const SET_MASSAGE_CURRENT = 'SET_MASSAGE_CURRENT'
 
@@ -49,11 +50,18 @@ export const setScrolled = (scrolled) => {
     }    
 }
 
+export const incrementMassageCurrentAuto = () => {
+    return {
+        type: INCREMENT_MASSAGE_CURRENT_AUTO
+    }
+}
+
 export const incrementMassageCurrent = () => {
     return {
         type: INCREMENT_MASSAGE_CURRENT
     }
 }
+
 
 export const decrementMassageCurrent = () => {
     return {

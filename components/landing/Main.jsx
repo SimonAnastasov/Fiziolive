@@ -15,15 +15,23 @@ const Main = () => {
         dispatch(setShowMoreCurrent(i))
     }
 
+    function decrement() {
+        dispatch(decrementMassageCurrent())
+    }
+
+    function increment() {
+        dispatch(incrementMassageCurrent())
+    }
+
     return (
         <div className="main">
-            <i onClick={() => dispatch(decrementMassageCurrent())} className="clickable far fa-arrow-alt-circle-left"></i>
+            <i onClick={() => decrement()} className="clickable far fa-arrow-alt-circle-left"></i>
             <div className="container">
                 <p>{title}</p>
                 <p>{explanation}</p>
                 <button onClick={() => showMore(massages.current)}>Дознај Повеќе...</button>
             </div>
-            <i onClick={() => dispatch(incrementMassageCurrent())} className="clickable far fa-arrow-alt-circle-right"></i>
+            <i onClick={() => increment()} className="clickable far fa-arrow-alt-circle-right"></i>
         </div>
     )
 }
