@@ -8,11 +8,11 @@ const Main = () => {
     const title = massage.title
 
     let titlePart1 = title, letter = "", titlePart2 = ""
-    // if (title.substring(0, 5) === 'Парци') {
-    //     titlePart1 = title.substring(0, 5)
-    //     letter = title.substring(5, 6)
-    //     titlePart2 = title.substring(6)
-    // }
+    if (title.substring(0, 5) === 'Парци') {
+        titlePart1 = title.substring(0, 5)
+        letter = title.substring(5, 6)
+        titlePart2 = title.substring(6)
+    }
 
     const explanation = massage.explanation.substr(0, 89) + '...'
 
@@ -36,8 +36,7 @@ const Main = () => {
             <i onClick={() => decrement()} className="clickable far fa-arrow-alt-circle-left"></i>
             <div className="container">
                 <span>Ви нудиме:</span>
-                {/* <p>{titlePart1}<span className="changeFont">{letter}</span>{titlePart2}</p> */}
-                <p>{titlePart1}</p>
+                <p>{titlePart1}<span className="changeFont">{letter}</span>{titlePart2}</p>
                 <p>{explanation}</p>
                 <button onClick={() => showMore(massages.current)}>Дознај Повеќе...</button>
             </div>
