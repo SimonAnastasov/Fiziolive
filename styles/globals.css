@@ -7,6 +7,7 @@ body {
   color: #565350;
   overflow-x: hidden;
   overflow-y: hidden;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 body * {
@@ -208,10 +209,16 @@ button:active {
   color: white;
 }
 
+.landing .main .container span {
+  display: inline-block;
+  text-align: center;
+}
+
 .landing .main .container p:nth-of-type(1) {
   font-size: 3rem;
   text-align: center;
   margin-bottom: 1rem;
+  font-family: 'Patrick Hand', cursive;
 }
 
 .landing .main .container p:nth-of-type(2) {
@@ -382,6 +389,7 @@ button:active {
   white-space: nowrap;
   margin-top: .5rem;
   margin-bottom: 1rem;
+  font-family: 'Patrick Hand', cursive;
 }
 
 .massages .container .cards .card .content p:nth-of-type(2) {
@@ -400,95 +408,48 @@ button:active {
 }
 
 .contact .container {
-  width: 80vw;
+  width: 65vw;
   margin: auto;
   margin-top: 2rem;
   padding: 1rem;
   background-color: #ffe6cb99;
   border: 1px solid black;
-}
-
-.contact .container > p {
-  text-align: center;
-  margin-bottom: .5rem;
-}
-
-.contact .container .ways {
-  width: 40vw;
-  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
-.contact .container .ways p {
-  font-size: 1.5rem;
-  text-decoration: underline;
-  color: #56535099;
-}
-
-.contact .container .ways p.active {
-  color: #565350;
-}
-
-.contact .container .triangles {
-  width: 40vw;
-  margin: auto;
+.contact .container > div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 0 1rem;
-}
-
-.contact .container .triangles img {
-  -webkit-transition: opacity .2s linear;
-  transition: opacity .2s linear;
-  opacity: 0;
-}
-
-.contact .container .triangles img.active {
-  opacity: 1;
-}
-
-.contact .container .chosen {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-bottom: 10vh;
-}
-
-.contact .container .chosen > div {
-  border: 1px solid black;
-  border-radius: 20px;
-  width: 40vw;
-  height: 40vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 2px;
+  text-align: center;
 }
 
-.contact .container .chosen .phone p {
-  font-size: 5rem;
+.contact .container > div p {
+  word-break: break-all;
+  font-size: 2rem;
 }
 
-.contact .container .chosen .email p {
-  font-size: 4rem;
+.contact .container iframe {
+  border: none;
+  border-radius: 20px;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
 }
 
 .showMore {
@@ -638,6 +599,7 @@ button:active {
 }
 
 .header {
+  font-family: 'Patrick Hand', cursive;
   position: fixed;
   left: 0;
   top: 0;
@@ -684,6 +646,7 @@ button:active {
 }
 
 .footer {
+  font-family: 'Patrick Hand', cursive;
   display: none;
 }
 
@@ -806,6 +769,18 @@ button:active {
     width: 2rem;
     height: 2rem;
   }
+  .welcome .container p:nth-of-type(1) {
+    font-size: 3.5rem;
+  }
+  .welcome .container p:nth-of-type(2) {
+    font-size: 2.5rem;
+  }
+  .welcome .container p:nth-of-type(3) {
+    font-size: 3.5rem;
+  }
+  .welcome .container p:nth-of-type(4) {
+    font-size: 2.5rem;
+  }
   .landing .main {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -896,33 +871,11 @@ button:active {
   .massages .container .cards .card .content p:nth-of-type(1) {
     margin-top: 1rem;
   }
-  .contact {
-    margin-bottom: 40vh;
-  }
   .contact .container {
-    width: 80vw;
+    width: 90vw;
   }
-  .contact .container .ways {
-    width: 100%;
-  }
-  .contact .container .ways p {
-    font-size: 1.5rem;
-  }
-  .contact .container .triangles {
-    width: 100%;
-  }
-  .contact .container .chosen {
-    margin-bottom: 5vh;
-  }
-  .contact .container .chosen > div {
-    width: 100%;
-    height: 30vh;
-  }
-  .contact .container .chosen .phone p {
-    font-size: 3rem;
-  }
-  .contact .container .chosen .email p {
-    font-size: 2rem;
+  .contact .container > div p {
+    font-size: 1.8rem;
   }
   .header {
     -webkit-box-pack: center;
@@ -991,6 +944,41 @@ button:active {
   .massages .container .cards .card {
     width: 60vw;
   }
+  .contact .container {
+    width: 80vw;
+    padding: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact .container > div {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .contact .container > div p {
+    font-size: 1.4rem;
+  }
+  .contact .container iframe {
+    width: 100%;
+    aspect-ratio: 16/14;
+  }
 }
 
 @media (max-width: 500px) {
@@ -1051,6 +1039,23 @@ button:active {
   .landing .main .container p:nth-of-type(2) {
     font-size: 1.8rem;
   }
+  .contact .container {
+    width: 80vw;
+    padding: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact .container > div {
+    margin-bottom: .5rem;
+  }
+  .contact .container > div p {
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 450px) {
@@ -1082,7 +1087,7 @@ button:active {
         align-self: center;
   }
   .landing .dots {
-    bottom: 25%;
+    bottom: 20%;
   }
   .massages .container i {
     display: none;

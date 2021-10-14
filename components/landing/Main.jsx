@@ -27,6 +27,7 @@ const Main = () => {
         <div className="main">
             <i onClick={() => decrement()} className="clickable far fa-arrow-alt-circle-left"></i>
             <div className="container">
+                <span>Ви нудиме:</span>
                 <p>{title}</p>
                 <p>{explanation}</p>
                 <button onClick={() => showMore(massages.current)}>Дознај Повеќе...</button>

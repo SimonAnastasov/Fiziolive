@@ -9,7 +9,7 @@ const AboutUs = () => {
             </div>
             <div className="container">
                 <Image width="160" height="160" src="/media/anil.png"/>
-                <p>Др. Анил Кадриов е физиотерапевт, со години искуство во масажи и завршен епик факултет.</p>
+                <p>Др. Анил Кадриов е физиотерапевт.</p>
             </div>
         </div>
     )

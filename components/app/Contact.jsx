@@ -8,26 +8,6 @@ const Contact = () => {
 
     const dispatch = useDispatch()
 
-    const phone = (
-        <div className="phone">
-            <p>071 888 334</p>
-        </div>
-    )
-    const email = (
-        <div className="email">
-            <p>email@email.com</p>
-        </div>
-    )
-    const message = (
-        <div className="message">
-            <p>Message</p>
-        </div>
-    )
-
-    const class1 = massages.contact === 'phone' ? 'active' : ''
-    const class2 = massages.contact === 'email' ? 'active' : ''
-    const class3 = massages.contact === 'message' ? 'active' : ''
-
     return (
         <div className="contact">
             <div className="titleAndHr">
@@ -35,20 +15,11 @@ const Contact = () => {
                 <hr/>
             </div>
             <div className="shadow container">
-                <p>Избери начин на контактирање:</p>                
-                <div className="ways">
-                    <p className={`clickable ${class1}`} onClick={() => dispatch(changeContactWay('phone'))}>Телефон</p>
-                    <p className={`clickable ${class2}`} onClick={() => dispatch(changeContactWay('email'))}>Е-маил</p>
-                    <p className={`clickable ${class3}`} onClick={() => dispatch(changeContactWay('message'))}>Порака</p>
+                <div>
+                    <p>Телефон:<br/>071 888 334</p>
+                    <p>Меил:<br/>anil@gmail.com</p>
                 </div>
-                <div className="triangles">
-                    <Image className={class1} width="50" height="30" src="/media/triangle.png"/>
-                    <Image className={class2} width="50" height="30" src="/media/triangle.png"/>
-                    <Image className={class3} width="50" height="30" src="/media/triangle.png"/>
-                </div>
-                <div className="chosen">
-                    {massages.contact === 'phone' ? phone : massages.contact === 'email' ? email : message}
-                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d742.5787292230056!2d22.509695829227336!3d41.886083998701366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDUzJzA5LjkiTiAyMsKwMzAnMzYuOSJF!5e0!3m2!1sen!2smk!4v1634198960195!5m2!1sen!2smk" width="600" height="450" allowFullScreen="" loading="lazy"></iframe>
             </div>
         </div>
     )
