@@ -446,6 +446,7 @@ button {
         }
 
         &>p {
+            font-family: 'Patrick Hand', cursive;
             font-size: 2.25rem;
             text-align: center;
             align-self: center;
@@ -620,6 +621,10 @@ button {
             border-color: $primary-border;
         }
     }
+}
+
+.changeFont {
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 // mobile
