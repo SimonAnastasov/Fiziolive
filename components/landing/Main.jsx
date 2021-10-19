@@ -38,7 +38,7 @@ const Main = () => {
                 <span>Ви нудиме:</span>
                 <p>{titlePart1}<span className="changeFont">{letter}</span>{titlePart2}</p>
                 <p>{explanation}</p>
-                <button onClick={() => showMore(massages.current)}>Дознај Повеќе...</button>
+                <button onClick={() => showMore(massages.current)}>Разгледај</button>
             </div>
             <i onClick={() => increment()} className="clickable far fa-arrow-alt-circle-right"></i>
         </div>

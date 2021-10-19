@@ -5,20 +5,46 @@ import Image from 'next/image'
 const Welcome = () => {
     useEffect(() => {
         let i = 1
-        const int = setInterval(() => {
-            if (document.getElementsByClassName(`p${i}`)[0] !== undefined) {
-                document.getElementsByClassName(`p${i}`)[0].style.opacity = '1'
-                i++
-            }
-            else {
-                document.getElementsByClassName('welcome')[0].style.top = '-120vh'
-                document.getElementsByClassName('welcome')[0].style.opacity = '0'
 
-                document.getElementsByClassName('landing')[0].style.opacity = '1'
-                document.querySelector('body').style.overflowY = 'scroll'
-                clearInterval(int)
-            }
-        }, 2000)
+        if (localStorage.firstTime === undefined) {
+            const int = setInterval(() => {
+                if (document.getElementsByClassName(`p${i}`)[0] !== undefined) {
+                    document.getElementsByClassName(`p${i}`)[0].style.opacity = '1'
+                    i++
+                }
+                else {
+                    document.getElementsByClassName('welcome')[0].style.top = '-120vh'
+                    document.getElementsByClassName('welcome')[0].style.opacity = '0'
+
+                    document.getElementsByClassName('landing')[0].style.opacity = '1'
+                    document.querySelector('body').style.overflowY = 'scroll'
+
+                    localStorage.firstTime = 'true'
+                    clearInterval(int)
+                }
+            }, 2000)
+        }
+        else {
+            document.getElementsByClassName(`p2`)[0].style.opacity = '1'
+            document.getElementsByClassName(`p3`)[0].style.opacity = '1'
+            document.getElementsByClassName(`p4`)[0].style.opacity = '1'
+
+            const int = setInterval(() => {
+                if (i < 2) {
+                    document.getElementsByClassName(`p${i}`)[0].style.opacity = '1'
+                    i++
+                }
+                else {
+                    document.getElementsByClassName('welcome')[0].style.top = '-120vh'
+                    document.getElementsByClassName('welcome')[0].style.opacity = '0'
+
+                    document.getElementsByClassName('landing')[0].style.opacity = '1'
+                    document.querySelector('body').style.overflowY = 'scroll'
+
+                    clearInterval(int)
+                }
+            }, 2000)
+        }
     }, [])
 
     return (

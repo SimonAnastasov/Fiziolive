@@ -21,7 +21,7 @@ const Card = ({i}) => {
             <div className="content">
                 <p>{title}</p>
                 <p>{explanation}</p>
-                <button onClick={() => showMore(i)}>Дознај Повеќе...</button>
+                <button onClick={() => showMore(i)}>Разгледај</button>
             </div>
         </div>
     )

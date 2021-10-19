@@ -17,6 +17,8 @@ export const SET_SHOW_MORE_CURRENT = 'SET_SHOW_MORE_CURRENT'
 export const INCREMENT_SHOW_MORE_CURRENT = 'INCREMENT_SHOW_MORE_CURRENT'
 export const DECREMENT_SHOW_MORE_CURRENT = 'DECREMENT_SHOW_MORE_CURRENT'
 
+export const SET_LAST_LOOKED_AT = 'SET_LAST_LOOKED_AT'
+
 export const setShowMoreCurrent = (i) => {
     return {
         type: SET_SHOW_MORE_CURRENT,
@@ -106,5 +108,12 @@ export const changeCardsLimit = (limit) => {
     return {
         type: CHANGE_CARDS_LIMIT,
         payload: limit
+    }
+}
+
+export const setLastLookedAt = (val) => {
+    return {
+        type: SET_LAST_LOOKED_AT,
+        payload: val
     }
 }

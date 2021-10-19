@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux"
-import { decrementShowMoreCurrent, incrementShowMoreCurrent, setShowMoreCurrent, toggleShowMore } from "../../redux/actions"
+import { decrementShowMoreCurrent, incrementShowMoreCurrent, setLastLookedAt, setShowMoreCurrent, toggleShowMore } from "../../redux/actions"
 
 const ShowMore = () => {
     const massages = useSelector(state => state.massages)
@@ -20,8 +20,10 @@ const ShowMore = () => {
         const element = document.getElementsByClassName(elm)[0]
         const rect = element.getBoundingClientRect()
 
+        const extra = (elm === 'contact') ? 20 : 0
+
         const vh = window.innerHeight * 0.01
-        const scroll = rect.top - bodyRect.top - 15*vh
+        const scroll = rect.top + extra - bodyRect.top - 15*vh
 
         window.scroll({
             top: scroll,
@@ -33,6 +35,12 @@ const ShowMore = () => {
         dispatch(toggleShowMore(false))
 
         setScroll('massages')
+    }
+
+    function action() {
+        dispatch(setLastLookedAt(massages.showMoreCurrent))
+        dispatch(toggleShowMore(false))
+        setScroll('contact')
     }
 
     return (
@@ -47,7 +55,7 @@ const ShowMore = () => {
                         </div>
                         <div className="down">
                             <p className="price">Цена: {massage.price}мкд</p>
-                            <button>Закажи Термин</button>
+                            <button onClick={() => action()}>Закажи Термин</button>
                         </div>
                     </div>
                     <div className="right" style={{backgroundImage: `url('${massage.cardImg}')`}}>

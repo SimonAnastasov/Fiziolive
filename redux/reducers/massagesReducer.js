@@ -1,4 +1,4 @@
-import { CHANGE_CARDS_LIMIT, CHANGE_CONTACT_WAY, DECREMENT_CARDS_CURRENT, DECREMENT_MASSAGE_CURRENT, DECREMENT_SHOW_MORE_CURRENT, INCREMENT_CARDS_CURRENT, INCREMENT_MASSAGE_CURRENT, INCREMENT_MASSAGE_CURRENT_AUTO, INCREMENT_SHOW_MORE_CURRENT, SET_CARDS_CURRENT, SET_MASSAGE_CURRENT, SET_SCROLLED, SET_SHOW_MORE_CURRENT, TOGGLE_SHOW_MORE } from "../actions"
+import { CHANGE_CARDS_LIMIT, CHANGE_CONTACT_WAY, DECREMENT_CARDS_CURRENT, DECREMENT_MASSAGE_CURRENT, DECREMENT_SHOW_MORE_CURRENT, INCREMENT_CARDS_CURRENT, INCREMENT_MASSAGE_CURRENT, INCREMENT_MASSAGE_CURRENT_AUTO, INCREMENT_SHOW_MORE_CURRENT, SET_CARDS_CURRENT, SET_LAST_LOOKED_AT, SET_MASSAGE_CURRENT, SET_SCROLLED, SET_SHOW_MORE_CURRENT, TOGGLE_SHOW_MORE } from "../actions"
 
 const massages = {
     showMore: false,
@@ -8,6 +8,7 @@ const massages = {
     current: 0,
     cardsCurrent: 0,
     cardsLimit: 4,
+    lastLookedAt: 2,
     massages: [
         {
             title: 'Релакс Масажа',
@@ -91,6 +92,8 @@ const massagesReducer = (state = massages, action) => {
             return {...state, cardsCurrent: (state.cardsCurrent-1 < 0) ? state.massages.length-1 : state.cardsCurrent-1}
         case SET_CARDS_CURRENT:
             return {...state, cardsCurrent: action.payload}
+        case SET_LAST_LOOKED_AT:
+            return {...state, lastLookedAt: action.payload}
         default:
             return state
     }

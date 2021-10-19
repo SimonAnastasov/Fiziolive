@@ -42,8 +42,10 @@ const Header = () => {
         const element = document.getElementsByClassName(elm)[0]
         const rect = element.getBoundingClientRect()
 
+        const extra = (elm === 'contact') ? 20 : 0
+
         const vh = window.innerHeight * 0.01
-        const scroll = rect.top - bodyRect.top - 15*vh
+        const scroll = rect.top + extra - bodyRect.top - 15*vh
 
         window.scroll({
             top: scroll,
@@ -58,6 +60,7 @@ const Header = () => {
                 <p onClick={() => setScroll('landing')} className="clickable underline">Fiziolive</p>
             </div>
             <div className="right">
+                <p onClick={() => setScroll('landing')} className="clickable underline">Дома</p>
                 <p onClick={() => setScroll('aboutUs')} className="clickable underline">За Нас</p>
                 <p onClick={() => setScroll('massages')} className="clickable underline">Масажи</p>
                 <p onClick={() => setScroll('contact')} className="clickable underline">Контакт</p>

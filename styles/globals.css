@@ -288,9 +288,24 @@ button:active {
   margin-bottom: 20vh;
 }
 
-.aboutUs .container {
+.aboutUs .bigContainer {
   width: 45vw;
   margin: auto;
+}
+
+.aboutUs .bigContainer .columnContainer {
+  text-align: center;
+}
+
+.aboutUs .bigContainer .columnContainer div {
+  margin-top: 1rem;
+}
+
+.aboutUs .bigContainer .columnContainer div p {
+  font-size: 1.3rem;
+}
+
+.aboutUs .bigContainer .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -300,7 +315,7 @@ button:active {
   padding: 2rem;
 }
 
-.aboutUs .container p {
+.aboutUs .bigContainer .container p {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
@@ -308,7 +323,7 @@ button:active {
   margin-left: 2rem;
 }
 
-.aboutUs .container img {
+.aboutUs .bigContainer .container img {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -407,19 +422,33 @@ button:active {
   margin-bottom: 40vh;
 }
 
-.contact .container {
+.contact .bigContainer {
   width: 65vw;
   margin: auto;
   margin-top: 2rem;
   padding: 1rem;
   background-color: #ffe6cb99;
   border: 1px solid black;
+}
+
+.contact .bigContainer > p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.contact .bigContainer > p span {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.contact .bigContainer .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.contact .container > div {
+.contact .bigContainer .container > div {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -430,21 +459,33 @@ button:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.contact .bigContainer .container > div p {
+  word-break: break-all;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
 }
 
-.contact .container > div p {
-  word-break: break-all;
+.contact .bigContainer .container > div p i {
+  aspect-ratio: 1;
   font-size: 2rem;
+  margin-right: .5rem;
 }
 
-.contact .container iframe {
+.contact .bigContainer .container iframe {
   border: none;
   border-radius: 20px;
   -webkit-box-flex: 2;
@@ -829,8 +870,10 @@ button:active {
   .titleAndHr {
     width: 90vw;
   }
-  .aboutUs .container {
+  .aboutUs .bigContainer {
     width: 90vw;
+  }
+  .aboutUs .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -876,10 +919,13 @@ button:active {
   .massages .container .cards .card .content p:nth-of-type(1) {
     margin-top: 1rem;
   }
-  .contact .container {
+  .contact .bigContainer {
     width: 90vw;
   }
-  .contact .container > div p {
+  .contact .bigContainer .container > div p {
+    font-size: 1.3rem;
+  }
+  .contact .bigContainer .container > div p i {
     font-size: 1.8rem;
   }
   .header {
@@ -949,9 +995,18 @@ button:active {
   .massages .container .cards .card {
     width: 60vw;
   }
-  .contact .container {
+  .contact .bigContainer {
     width: 80vw;
     padding: 2rem;
+  }
+  .contact .bigContainer > p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  .contact .bigContainer > p span {
+    font-size: 1.15rem;
+  }
+  .contact .bigContainer .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -960,27 +1015,26 @@ button:active {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .contact .container > div {
+  .contact .bigContainer .container > div {
     width: 100%;
     margin-bottom: 1rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
   }
-  .contact .container > div p {
-    font-size: 1.4rem;
+  .contact .bigContainer .container > div p {
+    font-size: 1rem;
+    margin: .5rem 0;
   }
-  .contact .container iframe {
+  .contact .bigContainer .container iframe {
     width: 100%;
     aspect-ratio: 16/14;
   }
@@ -1044,9 +1098,18 @@ button:active {
   .landing .main .container p:nth-of-type(2) {
     font-size: 1.8rem;
   }
-  .contact .container {
+  .contact .bigContainer {
     width: 80vw;
     padding: 1rem;
+  }
+  .contact .bigContainer > p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .contact .bigContainer > p span {
+    font-size: 1.05rem;
+  }
+  .contact .bigContainer .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1055,11 +1118,14 @@ button:active {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .contact .container > div {
+  .contact .bigContainer .container > div {
     margin-bottom: .5rem;
   }
-  .contact .container > div p {
-    font-size: 1.2rem;
+  .contact .bigContainer .container > div p {
+    font-size: 1rem;
+  }
+  .contact .bigContainer .container > div p i {
+    font-size: 1.5rem;
   }
 }
 
