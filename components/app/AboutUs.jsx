@@ -11,7 +11,7 @@ const AboutUs = () => {
 
         const day = date.getDay()
 
-        const time = date.getHours()
+        const time = date.getHours() + 1
 
         if (day >= 1 && day <= 5) {
             if ((time >= 11 && time <= 14) || (time >= 16 && time <= 20)) {

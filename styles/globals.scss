@@ -426,10 +426,16 @@ button {
                 justify-content: center;
                 align-items: flex-start;
 
+                a {
+                    color: $text;
+                }
+
                 p {
                     word-break: break-all;
                     font-size: 1.5rem;
                     margin: 1rem 0;
+
+                    text-decoration: underline;
 
                     display: flex;
                     align-items: center;
@@ -439,10 +445,6 @@ button {
                         font-size: 2rem;
                         margin-right: .5rem;
                     }
-
-                    // span.facebook {
-                    //     text-decoration: underline;
-                    // }
                 }
             }
 
