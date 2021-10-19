@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux"
-import { incrementMassageCurrentAuto } from '../../redux/actions'
+import { decrementMassageCurrent, incrementMassageCurrent, incrementMassageCurrentAuto } from '../../redux/actions'
 
 const Landing = () => {
     const massages = useSelector(state => state.massages)
@@ -13,6 +13,8 @@ const Landing = () => {
     const bg = massage.img
 
     const dispatch = useDispatch()
+
+    let start = 0, end = 0
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -23,6 +25,38 @@ const Landing = () => {
             clearInterval(interval)
         }
     }, [massages])
+
+    useEffect(() => {
+        window.addEventListener('touchstart', e => {
+            if (e.touches[0] !== undefined) {
+                start = e.touches[0].screenX
+            }
+            else start = 0
+        })
+
+        window.addEventListener('touchend', e => {
+            let diff = end - start
+
+            if (e.changedTouches[0] !== undefined) {
+                end = e.changedTouches[0].screenX
+                diff = end - start
+            }
+            else {
+                end = 0
+                diff = 0
+            }
+
+            if (diff === 0) {
+
+            }
+            else if (diff < 0) {
+                dispatch(incrementMassageCurrent())
+            }
+            else {
+                dispatch(decrementMassageCurrent())
+            }
+        })
+    }, [])
 
     function setScroll(elm) {
         const bodyRect = document.body.getBoundingClientRect()

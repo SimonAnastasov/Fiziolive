@@ -151,8 +151,8 @@ button:active {
 }
 
 .landing .img {
-  -webkit-transition: opacity .2s linear;
-  transition: opacity .2s linear;
+  -webkit-transition: opacity .8s ease-out;
+  transition: opacity .8s ease-out;
   opacity: 0;
 }
 
