@@ -215,7 +215,6 @@ button {
                     font-size: 3rem;
                     text-align: center;
                     margin-bottom: 1rem;
-                    font-family: 'Patrick Hand', cursive;
                 }
 
                 &:nth-of-type(2) {
@@ -371,7 +370,6 @@ button {
                             white-space: nowrap;
                             margin-top: .5rem;
                             margin-bottom: 1rem;
-                            font-family: 'Patrick Hand', cursive;
                         }
                         
                         &:nth-of-type(2) {
@@ -490,7 +488,6 @@ button {
         }
 
         &>p {
-            font-family: 'Patrick Hand', cursive;
             font-size: 2.25rem;
             text-align: center;
             align-self: center;
@@ -615,12 +612,12 @@ button {
     }
 
     .right p {
+        font-family: 'Source Sans Pro', sans-serif;
         font-size: 1.5rem;
     }
 }
 
 .footer {
-    font-family: 'Patrick Hand', cursive;
     display: none;
 }
 

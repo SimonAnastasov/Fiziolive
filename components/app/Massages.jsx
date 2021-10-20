@@ -13,6 +13,8 @@ const Massages = () => {
     let arrAdded = []
     let limit = massages.cardsLimit
 
+    let start = 0, end = 0, minDiff = 30
+
     useEffect(() => {
         const mediaBig = window.matchMedia('(max-width: 1100px)')
         const mediaMedium = window.matchMedia('(max-width: 700px)')
@@ -22,6 +24,36 @@ const Massages = () => {
         else if (mediaBig.matches) {
             dispatch(changeCardsLimit(2))
         }
+
+        document.getElementsByClassName('massages')[0].addEventListener('touchstart', e => {
+            if (e.touches[0] !== undefined) {
+                start = e.touches[0].screenX
+            }
+            else start = 0
+        })
+
+        document.getElementsByClassName('massages')[0].addEventListener('touchend', e => {
+            let diff = end - start
+
+            if (e.changedTouches[0] !== undefined) {
+                end = e.changedTouches[0].screenX
+                diff = end - start
+            }
+            else {
+                end = 0
+                diff = 0
+            }
+
+            if (Math.abs(diff) <= minDiff) {
+
+            }
+            else if (diff < 0) {
+                dispatch(incrementCardsCurrent())
+            }
+            else {
+                dispatch(decrementCardsCurrent())
+            }
+        })
     }, [])
 
     let cards1 = massages.massages.map((m, i) => {

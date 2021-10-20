@@ -218,7 +218,6 @@ button:active {
   font-size: 3rem;
   text-align: center;
   margin-bottom: 1rem;
-  font-family: 'Patrick Hand', cursive;
 }
 
 .landing .main .container p:nth-of-type(2) {
@@ -404,7 +403,6 @@ button:active {
   white-space: nowrap;
   margin-top: .5rem;
   margin-bottom: 1rem;
-  font-family: 'Patrick Hand', cursive;
 }
 
 .massages .container .cards .card .content p:nth-of-type(2) {
@@ -538,7 +536,6 @@ button:active {
 }
 
 .showMore .showMoreContainer > p {
-  font-family: 'Patrick Hand', cursive;
   font-size: 2.25rem;
   text-align: center;
   -ms-flex-item-align: center;
@@ -689,11 +686,11 @@ button:active {
 }
 
 .header .right p {
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.5rem;
 }
 
 .footer {
-  font-family: 'Patrick Hand', cursive;
   display: none;
 }
 

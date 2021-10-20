@@ -10,11 +10,10 @@ import { decrementMassageCurrent, incrementMassageCurrent, incrementMassageCurre
 const Landing = () => {
     const massages = useSelector(state => state.massages)
     const massage = massages.massages[massages.current]
-    const bg = massage.img
 
     const dispatch = useDispatch()
 
-    let start = 0, end = 0
+    let start = 0, end = 0, minDiff = 30
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -27,14 +26,14 @@ const Landing = () => {
     }, [massages])
 
     useEffect(() => {
-        window.addEventListener('touchstart', e => {
+        document.getElementsByClassName('landing')[0].addEventListener('touchstart', e => {
             if (e.touches[0] !== undefined) {
                 start = e.touches[0].screenX
             }
             else start = 0
         })
 
-        window.addEventListener('touchend', e => {
+        document.getElementsByClassName('landing')[0].addEventListener('touchend', e => {
             let diff = end - start
 
             if (e.changedTouches[0] !== undefined) {
@@ -46,7 +45,7 @@ const Landing = () => {
                 diff = 0
             }
 
-            if (diff === 0) {
+            if (Math.abs(diff) <= minDiff) {
 
             }
             else if (diff < 0) {
