@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
 const AboutUs = () => {
-    let status = 'отворено'
-    let color = 'green'
+    let status = ''
+    let textColor = ''
 
     function setOpened() {
         let isOpened = true
@@ -35,8 +35,13 @@ const AboutUs = () => {
 
         if (!isOpened) {
             status = 'затворено'
-            color = 'red'
+            textColor = 'red'
         }
+        else {
+            status = 'отворено'
+            textColor = 'green'
+        }
+        
     }
     setOpened()
 
@@ -50,7 +55,7 @@ const AboutUs = () => {
                 <div className="columnContainer">
                     <div>
                         <p>Работни часови:  </p>
-                        <p style={{color: color}}>(моментално {status})</p>
+                        <p style={{color: textColor}}>(моментално {status})</p>
                     </div>
                     <div>
                         <p>Понеделник - Петок:</p>
