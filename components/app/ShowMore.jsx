@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { decrementShowMoreCurrent, incrementShowMoreCurrent, setLastLookedAt, setShowMoreCurrent, toggleShowMore } from "../../redux/actions"
 
@@ -42,6 +43,39 @@ const ShowMore = () => {
         dispatch(toggleShowMore(false))
         setScroll('contact')
     }
+
+    let start = 0, end = 0, minDiff = 30
+    useEffect(() => {
+        document.getElementsByClassName('showMore')[0].addEventListener('touchstart', e => {
+            if (e.touches[0] !== undefined) {
+                start = e.touches[0].screenX
+            }
+            else start = 0
+        })
+
+        document.getElementsByClassName('showMore')[0].addEventListener('touchend', e => {
+            let diff = end - start
+
+            if (e.changedTouches[0] !== undefined) {
+                end = e.changedTouches[0].screenX
+                diff = end - start
+            }
+            else {
+                end = 0
+                diff = 0
+            }
+
+            if (Math.abs(diff) <= minDiff) {
+
+            }
+            else if (diff < 0) {
+                dispatch(incrementShowMoreCurrent())
+            }
+            else {
+                dispatch(decrementShowMoreCurrent())
+            }
+        })
+    }, [])
 
     return (
         <div className="showMore">
